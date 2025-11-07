@@ -10,10 +10,6 @@ file(GLOB TINYCRYPT_SRC "security/default-backend/sec-lib/tinycrypt/*.c")
 file(GLOB UTIL_SRC "util/*.c")
 file(GLOB ADAPT_SRC "adaptation/esp32/*.c")
 
-# add_compile_definitions(
-#     "FEATURE_PERIPH_HWRNG"
-# )
-
 idf_component_register(
     SRCS
         ${ADAPT_SRC}
@@ -37,16 +33,12 @@ idf_component_register(
         "security/default-backend"
         "security/default-backend/sec-lib/micro-ecc"
         "security/default-backend/sec-lib/tinycrypt"
-
         "adaptation/esp32/"
 
     REQUIRES
-        esp_timer freertos lwip
-
+        esp_timer freertos lwip esp_netif
 
 )
 
-# target_compile_definitions(${COMPONENT_LIB} PRIVATE FEATURE_PERIPH_HWRNG)
-# idf_component_set_property(${COMPONENT_LIB} COMPILE_DEFINITIONS FEATURE_PERIPH_HWRNG APPEND)
-
 idf_build_set_property(COMPILE_DEFINITIONS FEATURE_PERIPH_HWRNG APPEND)
+idf_build_set_property(COMPILE_DEFINITIONS DEBUG_UDP_FACE APPEND)
