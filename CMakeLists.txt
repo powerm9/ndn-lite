@@ -36,7 +36,7 @@ idf_component_register(
         "adaptation/esp32/"
 
     REQUIRES
-        esp_timer freertos lwip esp_netif
+        esp_timer freertos lwip esp_netif esp_wifi nvs_flash
 
 )
 

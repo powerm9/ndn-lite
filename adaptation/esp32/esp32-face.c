@@ -166,7 +166,6 @@ static ndn_udp_face_t* ndn_udp_face_construct(
   ret->multicast = multicast;
   ret->process_event = NULL;
   ndn_face_up(&ret->intf);
-
   return ret;
 
 }

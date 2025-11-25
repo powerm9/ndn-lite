@@ -18,10 +18,6 @@
 #include "adapt-consts.h"
 #include "esp32-face.h"
 #include "esp32-rng.h"
-#include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
-#include "lwip/inet.h"
-
 
 #ifdef __cplusplus
 extern "C" {
